@@ -3,9 +3,9 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   static const String baseUrl = "https://api.themoviedb.org/3";
-  //ganti denganAPIkey Maisng-masing
+  //ganti dengan APIKey masing-masing
   static const String apiKey = "40fe4280ef4026c97875fff49a23a097";
-  //1. Mengambil list moving yang saat ini tayang
+  //1. mengambil list movie yang saat ini tayang
   Future<List<Map<String, dynamic>>> getAllMovies() async {
     final response = await http.get(
       Uri.parse("$baseUrl/movie/now_playing?api_key=$apiKey"),
@@ -14,8 +14,8 @@ class ApiService {
     return List<Map<String, dynamic>>.from(data['results']);
   }
 
-  //2. Mengambil list moving yang sedang trending
-  Future<List<Map<String, dynamic>>> getTrendingMoving() async {
+  //2. mengambil list movie yang sedang trending minggu ini
+  Future<List<Map<String, dynamic>>> getTrendingMovies() async {
     final response = await http.get(
       Uri.parse("$baseUrl/trending/movie/week?api_key=$apiKey"),
     );
@@ -23,19 +23,19 @@ class ApiService {
     return List<Map<String, dynamic>>.from(data['results']);
   }
 
-  //3. Mengambil list populer movie
-  Future<List<Map<String, dynamic>>> getPopularMoving() async {
+  //3. mengambil list popular movie
+  Future<List<Map<String, dynamic>>> getPopularMovies() async {
     final response = await http.get(
-      Uri.parse("$baseUrl/movie/popular/?api_key=$apiKey"),
+      Uri.parse("$baseUrl/movie/popular?api_key=$apiKey"),
     );
     final data = json.decode(response.body);
     return List<Map<String, dynamic>>.from(data['results']);
   }
 
-  //4. Megambil list movie melalui pencarian
-  Future<List<Map<String, dynamic>>> serchMovies(Stringquery) async {
+  //4. mengambil list movie melalui pencarian
+  Future<List<Map<String, dynamic>>> searchMovies(String query) async {
     final response = await http.get(
-      Uri.parse("$baseUrl/movie/popular/?api_key=$apiKey"),
+      Uri.parse("$baseUrl/search/movie?query=$query&api_key=$apiKey"),
     );
     final data = json.decode(response.body);
     return List<Map<String, dynamic>>.from(data['results']);

@@ -6,7 +6,6 @@ class Movie {
   final String backdropPath;
   final String releaseDate;
   final double voteAverage;
-
   Movie({
     required this.id,
     required this.title,
@@ -16,8 +15,7 @@ class Movie {
     required this.releaseDate,
     required this.voteAverage,
   });
-
-  factory Movie.fromIson(Map<String, dynamic> json) {
+  factory Movie.fromJson(Map<String, dynamic> json) {
     return Movie(
       id: json['id'] ?? '',
       title: json['title'] ?? '',

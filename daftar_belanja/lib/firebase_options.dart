@@ -55,6 +55,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '203660663103',
     projectId: 'first-app-b36de',
     authDomain: 'first-app-b36de.firebaseapp.com',
+    databaseURL: 'https://first-app-b36de-default-rtdb.firebaseio.com/',
     storageBucket: 'first-app-b36de.firebasestorage.app',
     measurementId: 'G-H8TTHJBK9B',
   );
@@ -64,6 +65,7 @@ class DefaultFirebaseOptions {
     appId: '1:203660663103:android:dd9bc5798af9eab5071b8a',
     messagingSenderId: '203660663103',
     projectId: 'first-app-b36de',
+    databaseURL: 'https://first-app-b36de-default-rtdb.firebaseio.com/',
     storageBucket: 'first-app-b36de.firebasestorage.app',
   );
 }

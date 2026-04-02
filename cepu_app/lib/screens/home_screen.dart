@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Home Screen")),
-      body: const Center(child: Text("You have been signed in!")),
+      body: const Center(child: Text("You Have Been Signed In!")),
     );
   }
 }

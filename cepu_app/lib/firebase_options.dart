@@ -68,4 +68,5 @@ class DefaultFirebaseOptions {
     databaseURL: 'https://first-app-b36de-default-rtdb.firebaseio.com',
     storageBucket: 'first-app-b36de.firebasestorage.app',
   );
+
 }
